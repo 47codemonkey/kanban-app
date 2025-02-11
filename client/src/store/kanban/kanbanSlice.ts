@@ -19,7 +19,7 @@ const initialState: KanbanState = {
   },
 };
 
-const API_URL = process.env.REACT_APP_API_URL || 'http://localhost:3000';
+const API_URL = process.env.REACT_APP_API_URL;
 
 export const fetchCards = createAsyncThunk('kanban/fetchCards', async (boardId: string) => {
   const response = await fetch(`${API_URL}/api/cards?boardId=${boardId}`);
