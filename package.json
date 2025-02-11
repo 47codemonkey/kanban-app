@@ -3,7 +3,6 @@
   "version": "1.0.0",
   "private": true,
   "scripts": {
-    "install": "npm install --workspaces",
     "install-client": "cd client && npm install",
     "install-server": "cd server && npm install",
     "build": "npm run build:client && npm run build:server",
