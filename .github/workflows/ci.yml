@@ -23,7 +23,7 @@ jobs:
           node-version: '18'
 
       - name: Install frontend dependencies
-        run: npm ci
+        run: npm install
 
       - name: Lint frontend code
         run: npx eslint "src/**/*.{js,jsx,ts,tsx}"
@@ -47,7 +47,7 @@ jobs:
           node-version: '18'
 
       - name: Install backend dependencies
-        run: npm ci
+        run: npm install
 
       - name: Run TypeScript type-check
         run: npx tsc --noEmit
