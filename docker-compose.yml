@@ -1,5 +1,3 @@
-version: '3.8'
-
 services:
   server:
     build:
@@ -7,9 +5,8 @@ services:
       dockerfile: Dockerfile
     ports:
       - '3000:3000'
-    environment:
-      - MONGODB_URI=${MONGODB_URI}
-      - NODE_ENV=${NODE_ENV}
+    env_file:
+      - ./server/.env
     restart: unless-stopped
 
   client:
