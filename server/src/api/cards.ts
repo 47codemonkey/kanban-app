@@ -1,28 +1,8 @@
 import express, { Request, Response } from 'express';
 import Card, { ICard } from '../models/Card.js';
+import { CreateCardBody, UpdateCardBody, ErrorResponse, SuccessResponse } from '../types/index.js';
 
 const router = express.Router();
-
-interface CreateCardBody {
-  title: string;
-  description: string;
-  status: string;
-  boardId: string;
-}
-
-interface UpdateCardBody {
-  title?: string;
-  description?: string;
-  status?: string;
-}
-
-interface ErrorResponse {
-  error: string;
-}
-
-interface SuccessResponse {
-  message: string;
-}
 
 router.get('/', async (req: Request, res: Response<ICard[] | ErrorResponse>) => {
   try {
