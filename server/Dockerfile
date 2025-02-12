@@ -19,6 +19,8 @@ COPY package*.json ./
 RUN npm install --omit=dev --legacy-peer-deps
     
 COPY --from=build /app/dist dist
+
+COPY .env .env
     
 EXPOSE 3000
     
