@@ -3,14 +3,35 @@ import mongoose from 'mongoose';
 const dbConnect = () => {
   const uri = process.env.MONGODB_URI;
   if (!uri) {
-    console.error('MONGODB_URI is not defined in your environment variables.');
-    process.exit(1);
+    throw new Error('MONGODB_URI is not defined in your environment variables.');
   }
 
   mongoose
     .connect(uri)
-    .then(() => console.log('MongoDB connected'))
-    .catch((err) => console.error('MongoDB connection error: ', err));
+    .then(() => {
+      process.stdout.write('MongoDB connected\n');
+    })
+    .catch((error: unknown) => {
+      const errorMessage = error instanceof Error ? error.message : 'Unknown MongoDB connection error';
+      process.stderr.write(`MongoDB connection error: ${errorMessage}\n`);
+    });
 };
 
 export default dbConnect;
+
+// import mongoose from 'mongoose';
+
+// const dbConnect = () => {
+//   const uri = process.env.MONGODB_URI;
+//   if (!uri) {
+//     console.error('MONGODB_URI is not defined in your environment variables.');
+//     process.exit(1);
+//   }
+
+//   mongoose
+//     .connect(uri)
+//     .then(() => console.log('MongoDB connected'))
+//     .catch((err) => console.error('MongoDB connection error: ', err));
+// };
+
+// export default dbConnect;

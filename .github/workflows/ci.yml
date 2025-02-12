@@ -49,5 +49,8 @@ jobs:
       - name: Install backend dependencies
         run: npm install
 
+      - name: Run ESLint for backend
+        run: npx eslint "src/**/*.{ts,tsx}"
+
       - name: Run TypeScript type-check
         run: npx tsc --noEmit
