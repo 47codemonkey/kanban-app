@@ -1,6 +1,5 @@
 module.exports = {
   root: true,
-  ignorePatterns: [],
   extends: [
     'eslint:recommended',
     'plugin:@typescript-eslint/recommended',
@@ -60,4 +59,10 @@ module.exports = {
     project: './tsconfig.json',
     tsconfigRootDir: __dirname,
   },
+  overrides: [
+    {
+      files: ['src/**/*.{js,jsx,ts,tsx}'],
+      rules: {},
+    },
+  ],
 };
