@@ -1,6 +1,6 @@
-import { defineConfig } from 'eslint-define-config';
+const { defineConfig } = require('eslint-define-config');
 
-export default defineConfig({
+module.exports = defineConfig({
   root: true,
   extends: [
     'eslint:recommended',
