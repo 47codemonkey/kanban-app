@@ -1,4 +1,6 @@
-module.exports = {
+import { Configuration } from 'webpack';
+
+const config: Configuration = {
   module: {
     rules: [
       {
@@ -22,3 +24,5 @@ module.exports = {
     extensions: ['.ts', '.tsx', '.js', '.jsx'],
   },
 };
+
+export default config;
