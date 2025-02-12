@@ -1,0 +1,108 @@
+# Kanban Full-Stack App
+
+This is a full-stack Kanban board application built with TypeScript, React, Redux Toolkit, Express, Node.js, and MongoDB Atlas. The application is containerized with Docker and deployed using Railway.
+
+## Technologies Used
+
+- **Frontend:** React, Redux Toolkit, TypeScript
+- **Backend:** Express, Node.js, TypeScript, MongoDB Atlas
+- **DevOps:** Docker, Docker Compose, GitHub Actions (for ESLint), Railway (for deployment)
+
+## Folder Structure
+
+```
+kanban/
+├── client/   # React frontend (includes Dockerfile)
+├── server/   # Express backend (includes Dockerfile)
+├── docker-compose.yml  # Docker Compose configuration
+```
+
+## Installation and Setup
+
+### Prerequisites
+
+Ensure you have the following installed:
+
+- Node.js & npm
+- Docker & Docker Compose
+- Railway CLI (if deploying manually)
+
+### Local Development
+
+1. Clone the repository:
+
+   ```sh
+   git clone https://github.com/your-repo.git
+   cd kanban-app
+   ```
+
+2. Install dependencies for both frontend and backend:
+
+   ```sh
+   cd client && npm install
+   cd ../server && npm install
+   ```
+
+3. Start the development servers:
+
+   - **Client:**
+     ```sh
+     cd client
+     npm start
+     ```
+   - **Server:**
+     ```sh
+     cd server
+     npm run dev
+     ```
+
+4. Open `http://localhost:3001` in your browser to access the application (server use 3000 port).
+
+### Production Build
+
+1. Build the client:
+   ```sh
+   cd client
+   npm run build
+   ```
+2. Generate the server dist:
+   ```sh
+   cd ../server
+   npm run build
+   ```
+3. Start the server with the built files:
+   ```sh
+   npm start
+   ```
+
+### Running with Docker
+
+1. Ensure Docker is installed and running.
+2. Use Docker Compose to start both services:
+   ```sh
+   docker-compose up --build
+   ```
+
+### Deployment on Railway
+
+The app is deployed using **Railway**. Ensure you have the necessary environment variables set in your Railway project.
+
+## Environment Variables
+
+Create a `.env` file in the `server/` directory and set the following variables:
+
+```
+MONGO_URI=your_mongodb_connection_string
+```
+
+## Linting
+
+GitHub Actions is configured to run ESLint on push. To run linting manually from the client/server folders, use the following command:
+
+```sh
+npm run lint
+```
+
+## License
+
+MIT
