@@ -87,3 +87,14 @@
 .card-form .button-secondary:hover {
   background: darkgray;
 }
+
+.error {
+  border: 2px solid red;
+  background: #ffe6e6;
+}
+
+.error-text {
+  color: red;
+  font-size: 12px;
+  margin-top: 5px;
+}
